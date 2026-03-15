@@ -1,6 +1,5 @@
 #include "automaton/convert.h"
 
-#include <stdio.h> // tode: delete
 #include <stdlib.h>
 #include <stdint.h>
 
