@@ -6,7 +6,6 @@
 #define AUTOMATON_EDGE_ANY ((signed char)-'.')
 
 struct AutomatonState {
-    int id; // todo: delete
     bool accept;
     List *edges;
 };

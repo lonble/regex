@@ -77,7 +77,7 @@ bool map_iterator_end(MapIterator *iterator) {
 
 MapPair map_iterate(MapIterator *iterator) {
     if (map_iterator_end(iterator)) {
-        return (MapPair){};
+        return (MapPair) {};
     }
     return *(MapPair *)set_iterate(iterator->core);
 }

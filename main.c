@@ -39,8 +39,3 @@ int main() {
     automaton_destroy(automaton);
     return 0;
 }
-
-// extern void test();
-// int main() {
-//     test();
-// }

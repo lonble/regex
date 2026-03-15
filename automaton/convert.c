@@ -52,28 +52,6 @@ static bool state_set_equal(void *set1, void *set2, [[maybe_unused]] void *conte
     return set_equal(set1, set2);
 }
 
-// todo: delete
-static void print_state_map(Map *state_map) {
-    MapIterator *map_iter = map_create_iterator(state_map);
-    while (!map_iterator_end(map_iter)) {
-        MapPair pair = map_iterate(map_iter);
-        fputs("Set [", stdout);
-        SetIterator *state_iter = set_create_iterator(pair.key);
-        while (!set_iterator_end(state_iter)) {
-            struct AutomatonState *state = set_iterate(state_iter);
-            printf("%d, ", state->id);
-        }
-        set_free_iterator(state_iter);
-        struct AutomatonState *new_state = pair.value;
-        printf("\b\b], State %d", new_state->id);
-        if (new_state->accept) {
-            fputs(" accept", stdout);
-        }
-        putchar('\n');
-    }
-    map_free_iterator(map_iter);
-}
-
 struct Automaton *automaton_generate_dfa_from_nfa(struct Automaton *nfa) {
     struct Automaton *dfa = malloc(sizeof(struct Automaton));
     // key: state_set, value: new_state
@@ -161,9 +139,6 @@ struct Automaton *automaton_generate_dfa_from_nfa(struct Automaton *nfa) {
         map_free(edge_map);
     }
     queue_free(unscanned);
-
-    // todo: delete
-    print_state_map(state_map);
 
     MapIterator *state_iter = map_create_iterator(state_map);
     while (!map_iterator_end(state_iter)) {

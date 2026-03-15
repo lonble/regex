@@ -5,10 +5,8 @@
 #include "list/list.h"
 
 struct AutomatonState *automaton_create_state() {
-    static int id = 0; // todo: delete
     struct AutomatonState *state = malloc(sizeof(struct AutomatonState));
     state->accept = false;
-    state->id = ++id; // todo: delete
     state->edges = list_create();
     return state;
 }

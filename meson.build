@@ -15,7 +15,6 @@ arguments = [
 add_project_arguments(arguments, language: 'c')
 
 sources = files(
-    'test.c',
     'main.c',
     'list/list.c',
     'stack/stack.c',
