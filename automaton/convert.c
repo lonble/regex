@@ -101,6 +101,7 @@ struct Automaton *automaton_generate_dfa_from_nfa(struct Automaton *nfa) {
                     map_add_unsafe(edge_map, (void *)(intptr_t)edge->input, dest_set);
                 }
             }
+            list_free_iterator(edge_iter);
         }
         set_free_iterator(state_iter);
 

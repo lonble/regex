@@ -63,6 +63,7 @@ void map_free(Map *map) {
     }
     set_free_iterator(iter);
     set_free(map->core);
+    free(map);
 }
 
 MapIterator *map_create_iterator(Map *map) {

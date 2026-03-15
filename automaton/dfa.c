@@ -209,6 +209,7 @@ struct Automaton *automaton_generate_minimized_dfa(struct Automaton *dfa) {
                     MapPair pair = map_iterate(condition_iter);
                     map_free(pair.value);
                 }
+                map_free_iterator(condition_iter);
                 map_free(partition_conditions);
 
                 list_concatenate(new_partition_list, splitted_partitions);
