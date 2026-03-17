@@ -12,6 +12,8 @@ Supported regular expression operators:
 \ . ? * + | ( )
 ```
 
+Supported charset: **ASCII** only.
+
 ## Build
 
 This project uses **`meson`** as the build tool. If you haven't installed it yet, please install it first, along with `ninja`.
